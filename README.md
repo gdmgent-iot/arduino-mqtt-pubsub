@@ -2,6 +2,13 @@
 Dit project toont hoe je een Arduino-compatibel board met WiFiNINA (bijv. MKR WiFi 1010, Nano 33 IoT) verbindt met een Wi-Fi netwerk en een MQTT-broker.
 De repository bevat een eenvoudige sketch `arduino-mqtt-pubsub.ino` en een `secrets.h.example` waarin je netwerk- en MQTT-gegevens kunt invullen. Kopieer `secrets.h.example` naar `secrets.h` en vul je eigen gegevens in voordat je de sketch uploadt.
 
+## Voorbeeld
+Hieronder zie je twee voorbeelden van de setup:
+
+![Voorbeeld 1](voorbeeld-1.jpg)
+
+![Voorbeeld 2](voorbeeld-2.jpg)
+
 ## Inhoud
 - `arduino-mqtt-pubsub.ino`  - Arduino sketch die verbinding maakt met Wi-Fi en een MQTT-broker.
 - `secrets.h.example`    - Voorbeeldbestand met placeholders voor SSID, wachtwoord en MQTT-gegevens.
