@@ -25,3 +25,11 @@ cutie.on("connect", () => {
 cutie.on("message", (topic, message) => {
   $ulMessages.innerHTML += "<li>" + message + "</li>";
 });
+
+// als ik klik op de knop, moeten alle LEDs aan
+$btnOn.addEventListener("click", () => {
+  cutie.publish(topic, "LED ON");
+});
+$btnOff.addEventListener("click", () => {
+  cutie.publish(topic, "LED OFF");
+});
