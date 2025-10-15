@@ -78,9 +78,6 @@ void loop() {
   if (WiFi.status() != WL_CONNECTED) {
     Serial.println("WiFi verloren, opnieuw verbinden...");
     connectToWiFi();
-  } else {
-    // door een return te plaatsen, voorkom je dat er meteen weer een connectie naar MQTT wordt gemaakt
-    return;
   }
 
   if (!cutie.connected()) {
