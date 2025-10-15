@@ -11,3 +11,10 @@ const url = "ws://" + broker + ":" + port;
 
 // mqtt client aanmaken
 const cutie = mqtt.connect(url);
+
+// connectie maken
+cutie.on("connect", () => {
+  console.log("Verbonden met de broker");
+
+  client.subscribe(topic, (error) => {});
+});
