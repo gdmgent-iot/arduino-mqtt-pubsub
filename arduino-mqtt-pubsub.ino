@@ -3,7 +3,7 @@
 #include <ArduinoMqttClient.h>
 
 // MQTT BROKER SETTINGS
-const char* broker = "test.mosquitto.org";
+const char* broker = "192.168.1.114";
 const int port = 1883;
 const char* topic = "technology/arduino/demo";
 
@@ -78,13 +78,17 @@ void loop() {
   if (WiFi.status() != WL_CONNECTED) {
     Serial.println("WiFi verloren, opnieuw verbinden...");
     connectToWiFi();
+  } else {
+    // door een return te plaatsen, voorkom je dat er meteen weer een connectie naar MQTT wordt gemaakt
+    return;
   }
 
-  if(!cutie.connected()) {
+  if (!cutie.connected()) {
     Serial.println("MQTT verbinding verloren, opnieuw verbinden...");
     connectToMqtt();
     return;
   }
+
   // when button pressed, send message
   publishWhenBtnPressed();
   // listen to messages
