@@ -15,6 +15,13 @@ const cutie = mqtt.connect(url);
 // connectie maken
 cutie.on("connect", () => {
   console.log("Verbonden met de broker");
+  cutie.subscribe(topic, (error) => {
+    if (error) console.error("Er ging iets mis");
+    else console.log("Geabbonneerd op topic" + topic);
+  });
+});
 
-  client.subscribe(topic, (error) => {});
+// luisteren naar messages
+cutie.on("message", (topic, message) => {
+  $ulMessages.innerHTML += "<li>" + message + "</li>";
 });
